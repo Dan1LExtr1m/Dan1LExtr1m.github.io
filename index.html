@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Text Gradient</title>
+</head>
+<body>
+	<!-- Only HTML and JavaScript -->
+	<canvas id="text" style="display: block;">Text is not supported.</canvas>
+	<script>
+		var
+			canv = document.getElementById('text'),
+			ctx = canv.getContext('2d');
+
+		canv.width = window.innerWidth;
+		canv.height = window.innerHeight;
+
+		// Text Gradient
+		var
+			grad = ctx.createLinearGradient(0, 0, 350, 0);
+
+		grad.addColorStop('0', 'red');
+		grad.addColorStop('.5', 'orange');
+		grad.addColorStop('1', 'yellow');
+
+		ctx.fillStyle = grad;
+
+		ctx.font = '30px Arial';
+		ctx.fillText('Hello World!', 100, 100);
+	</script>
+</body>
+</html>
