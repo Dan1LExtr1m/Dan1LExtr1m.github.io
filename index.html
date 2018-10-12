@@ -1,32 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 	<meta charset="UTF-8">
-	<title>Text Gradient</title>
+	<title>Numbers</title>
 </head>
 <body>
-	<!-- Only HTML and JavaScript -->
-	<canvas id="text" style="display: block;">Text is not supported.</canvas>
 	<script>
-		var
-			canv = document.getElementById('text'),
-			ctx = canv.getContext('2d');
+		var firstNumber = prompt('Введите минимум:' + '');
+		var secondNumber = prompt('Введите максимум:' + '');
 
-		canv.width = window.innerWidth;
-		canv.height = window.innerHeight;
+		// Преобразование строки в число
+		var firstNumber = Number(firstNumber);
+		var secondNumber = Number(secondNumber);
 
-		// Text Gradient
-		var
-			grad = ctx.createLinearGradient(0, 0, 350, 0);
+		if (secondNumber < firstNumber) {
+			var firstNumber = firstNumber + 1;
+			var problem = 'Вы ввели минимум больше максимума, поэтому минимум стал максимумом, а максимум — минимумом';
+			document.write('Случайное число: ' + randomInt(secondNumber, firstNumber) + '<br \/>' + problem);
+		} else {
+			var secondNumber = secondNumber + 1;
+			document.write('Случайное число: ' + randomInt(firstNumber, secondNumber));
+		}
 
-		grad.addColorStop('0', 'red');
-		grad.addColorStop('.5', 'orange');
-		grad.addColorStop('1', 'yellow');
-
-		ctx.fillStyle = grad;
-
-		ctx.font = '30px Arial';
-		ctx.fillText('Hello World!', 100, 100);
+		function randomInt(min, max) {
+			return Math.floor(Math.random() * (max - min)) + min;
+		}
 	</script>
 </body>
 </html>
