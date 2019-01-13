@@ -29,7 +29,7 @@
 				if (clicks >= 100 && isBooster < 2) {
 					clicks -= 100;
 					isBooster = 2;
-				} else if (isBooster => 2) {
+				} else if (isBooster >= 2) {
 					document.getElementById("shopWarning").innerHTML = "Your booster is better";
 				} else {
 					document.getElementById("shopWarning").innerHTML = "You need 100 clicks";
