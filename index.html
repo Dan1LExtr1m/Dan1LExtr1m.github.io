@@ -5,25 +5,14 @@
 	<title>Numbers</title>
 </head>
 <body>
+	<div>Clicks: <span id="numClicks"</div>
+	<button onclick="click(1)">Click/button>
 	<script>
-		var firstNumber = prompt('Введите минимум:' + '');
-		var secondNumber = prompt('Введите максимум:' + '');
-
-		// Преобразование строки в число
-		var firstNumber = Number(firstNumber);
-		var secondNumber = Number(secondNumber);
-
-		if (secondNumber < firstNumber) {
-			var firstNumber = firstNumber + 1;
-			var problem = 'Вы ввели минимум больше максимума, поэтому минимум стал максимумом, а максимум — минимумом';
-			document.write('Случайное число: ' + randomInt(secondNumber, firstNumber) + '<br \/>' + problem);
-		} else {
-			var secondNumber = secondNumber + 1;
-			document.write('Случайное число: ' + randomInt(firstNumber, secondNumber));
-		}
-
-		function randomInt(min, max) {
-			return Math.floor(Math.random() * (max - min)) + min;
+		var clicks = 0;
+		
+		function click(num) {
+			clicks += num;
+			document.getElementById("numClicks").innerHTML = clicks;
 		}
 	</script>
 </body>
