@@ -24,7 +24,7 @@
 			click: function () {
 				clicks += 1 * isBooster;
 				document.getElementById("numClicks").innerHTML = clicks;
-			}
+			},
 			booster: function () {
 				if (clicks >= 100 && isBooster < 2) {
 					clicks -= 100;
@@ -34,7 +34,7 @@
 				} else {
 					document.getElementById("shopWarning").innerHTML = "You need 100 clicks";
 				}
-			}
+			};
 		}
 		
 		document.getElementById("clickButton").onclick = myObject.click;
