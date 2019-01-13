@@ -5,9 +5,6 @@
 	<title>Numbers</title>
 </head>
 <body>
-	<div>Clicks: <span id="numClicks">0</span></div>
-	<br />
-	<input type="button" value="Click" name="clickButton" OnClick="click()" />
 	<script>
 		var clicks = 0;
 		
@@ -17,5 +14,9 @@
 		
 		document.getElementById("numClicks").innerHTML = clicks;
 	</script>
+	
+	<div>Clicks: <span id="numClicks">0</span></div>
+	<br />
+	<input type="button" value="Click" name="clickButton" OnClick="click()" />
 </body>
 </html>
