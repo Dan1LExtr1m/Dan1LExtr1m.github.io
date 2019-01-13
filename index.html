@@ -7,16 +7,19 @@
 <body>	
 	<div>Clicks: <span id="numClicks">0</span></div>
 	<br />
-	<input type="button" value="Click" name="clickButton" OnClick="click()" />
+	<button type="submit" id="clickButton">Click</button>
 	
 	<script>
 		var clicks = 0;
 		
-		function click() {
-			clicks += 1;
-			console.log("Функция сработала!");
+		var myObject = {
+			click: function () {
+				clicks += 1;
+				console.log("Функция сработала!");
+			}
 		}
 		
+		document.getElementById("clickButton").onclick = myObject.click;
 		document.getElementById("numClicks").innerHTML = clicks;
 	</script>
 </body>
