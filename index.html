@@ -5,7 +5,7 @@
 	<title>Numbers</title>
 </head>
 <body>
-	<div>Clicks: <span id="numClicks">0</span></div>
+	<div>Clicks: <div id="numClicks">0</div></div>
 	<br />
 	<button onclick="click(1)">Click</button>
 	<script>
@@ -13,8 +13,9 @@
 		
 		function click(num) {
 			clicks += num;
-			document.getElementById("numClicks").innerHTML = clicks;
 		}
+		
+		document.getElementById("numClicks").innerHTML = clicks;
 	</script>
 </body>
 </html>
