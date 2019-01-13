@@ -15,12 +15,11 @@
 		var myObject = {
 			click: function () {
 				clicks += 1;
-				console.log("Функция сработала!");
+				document.getElementById("numClicks").innerHTML = clicks;
 			}
 		}
 		
 		document.getElementById("clickButton").onclick = myObject.click;
-		document.getElementById("numClicks").innerHTML = clicks;
 	</script>
 </body>
 </html>
