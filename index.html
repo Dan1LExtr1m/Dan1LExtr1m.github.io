@@ -1,44 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>Numbers</title>
+	<meta charset="utf-8">
+	<title>Title</title>
+	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//ajax.aspnetcdn.com/ajax/jquery.ui/1.10.3/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.3/themes/sunny/jquery-ui.css">
+	
+	<style>
+		.draggable {
+			background-color: orange;
+			width: 250px;
+			height: 250px;
+		}
+	</style>
+	<script>
+		$(function() {
+			$(".draggable").draggable();
+		}
+	</script>
 </head>
 <body>	
-	<div>Clicks: <span id="numClicks">0</span></div>
-	
-	<br />
-	
-	<button type="submit" id="clickButton">Click</button>
-	
-	<hr />
-
-	<h3>The shop</h3>
-	<div id="shopWarning"></div>
-	<button type="submit" id="booster">Buy 2x booster</button>
-	<script>
-		var clicks = 0,
-		    isBooster = 1;
-		
-		var myObject = {
-			click: function () {
-				clicks += 1 * isBooster;
-				document.getElementById("numClicks").innerHTML = clicks;
-			},
-			booster: function () {
-				if (clicks >= 100 && isBooster < 2) {
-					clicks -= 100;
-					isBooster = 2;
-				} else if (isBooster >= 2) {
-					document.getElementById("shopWarning").innerHTML = "Your booster is better";
-				} else {
-					document.getElementById("shopWarning").innerHTML = "You need 100 clicks";
-				}
-			}
-		};
-		
-		document.getElementById("clickButton").onclick = myObject.click;
-		document.getElementById("booster").onclick = myObject.booster;
-	</script>
+	<div id="draggable" class="ui-widget ui-corner-all ui-state-error"></div>
 </body>
 </html>
