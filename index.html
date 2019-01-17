@@ -9,10 +9,20 @@
     <link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.3/themes/sunny/jquery-ui.css">
 	
 	<style>
-		.draggable {
-			background-color: orange;
-			width: 250px;
-			height: 250px;
+		.element {
+			cursor: pointer;
+			border: 1px none grey;
+			display: inline-block;
+			padding: 1 3px;
+			min-width: 50px;
+			position: absolute;
+			text-align: center;
+			font-weight: bold;
+			font-family: Arial;
+		}
+		.fire { 
+			background-color: rgba(256, 238, 0, 0.4); 
+			color: red;
 		}
 	</style>
 	
@@ -23,6 +33,6 @@
 	</script>
 </head>
 <body>	
-	<div class="draggable ui-widget ui-corner-all ui-state-error"></div>
+	<div class="draggable element fire ui-widget ui-corner-all ui-state-error"></div>
 </body>
 </html>
