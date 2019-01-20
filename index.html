@@ -2,51 +2,20 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Title</title>
+	<title>Alchemy 0.1 Alpha</title>
+	<link rel="stylesheet" href="./style.css">
 	
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="//ajax.aspnetcdn.com/ajax/jquery.ui/1.10.3/jquery-ui.min.js"></script>
-    <link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.3/themes/sunny/jquery-ui.css">
+	<!-- jQuery -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.3/jquery-ui.min.js"></script>
 	
-	<style>
-		.element {
-			border-radius: 10px;
-			border: 1px none grey;
-			cursor: pointer;
-			display: inline-block;
-			font-family: Arial;
-			font-weight: bold;
-			min-width: 50px;
-			opacity: 1;
-			padding: 1 3px;
-			padding: 5px;
-			position: absolute;
-			text-align: center;
-			user-select: none;
- 		}
- 
-		.fire {
-			background-color: rgba(256, 238, 0, 0.4);
-			color: red;
- 		}
- 
-		.air {filter: progid:DXImageTransform.Microsoft.gradient (startColorstr=#7FCCEEFF, endColorstr=#7FCCEEFF);}
-	</style>
-	
-	<script>
-		$(function() {
-			$(".draggable").draggable();
-			
-			$('.droppable').droppable({
-        		drop: function() {
-            			console.log("Привет! Реакция должна быть, но её тут нет.");
-        		}
-    		});
-		});
-	</script>
+	<script src="./js/drag'n'drop.js"></script>
 </head>
-<body>	
-	<div class="draggable droppable element fire ui-widget ui-corner-all ui-state-error">Fire</div>
-	<div class="draggable droppable element fire ui-widget ui-corner-all ui-state-error">Fire</div>
+<body>
+	<div class="element fire draggable droppable">Fire</div>
+	<div class="element fire draggable droppable">Fire</div>
+	
+	<div id="message"></div>
+	<script src="./js/alchemy.js"></script>
 </body>
 </html>

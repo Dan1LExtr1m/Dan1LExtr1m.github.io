@@ -1,0 +1,24 @@
+html, body {
+	padding: 0;
+	margin: 0;
+}
+
+.element {
+	border-radius: 10px;
+	border: 1px none grey;
+	cursor: pointer;
+	display: inline-block;
+	font-family: Arial;
+	font-weight: bold;
+	min-width: 50px;
+	opacity: 1;
+	padding: 5px;
+	position: absolute;
+	text-align: center;
+	user-select: none;
+}
+ 
+.fire {
+	background-color: rgba(256, 238, 0, 0.4);
+	color: red;
+}
