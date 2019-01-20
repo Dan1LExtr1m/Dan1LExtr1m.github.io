@@ -1,3 +1,7 @@
+$.getScript('http://example.com/script.js', function(){
+  alert('script loaded');
+});
+
 $(function() {
 	$(".draggable").draggable();
 			
