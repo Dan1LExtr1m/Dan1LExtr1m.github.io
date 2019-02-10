@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+html, body, #board {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.element {
+	border: 1px none grey;
+	border-radius: 10px;
+	cursor: pointer;
+	display: inline-block;
+	min-width: 50px;
+	padding: 5px;
+	position: absolute;
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+	font-weight: bold;
+	user-select: none;
+}
+
+.fire {
+	background-color: rgba(256, 238, 0, 0.4);
+	color: red;
+}
+
+.water {
+	background-color: rgba(0, 200, 230, 0.3);
+	color:#009696;
+}
