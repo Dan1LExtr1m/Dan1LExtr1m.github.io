@@ -19,6 +19,7 @@ html, body, #board {
 	font-family: 'Roboto', sans-serif;
 	font-weight: bold;
 	user-select: none;
+	z-index: 1;
 }
 
 .fire {
@@ -29,4 +30,8 @@ html, body, #board {
 .water {
 	background-color: rgba(0, 200, 230, 0.3);
 	color:#009696;
+}
+
+.ui-draggable-dragging {
+	z-index: 2;
 }

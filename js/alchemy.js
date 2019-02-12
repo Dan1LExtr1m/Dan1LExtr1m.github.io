@@ -1,16 +1,20 @@
-var jsonCode = '{ "inits": ["Fire", "Water"], "classes": { "Fire": "fire", "Water": "water"} }'
+const userCode = JSON.parse('{ "inits": ["Fire", "Water", "Power"], "classes": { "Fire": "fire", "Water": "water", "Power": "fire"} }');
 
-var data = {
-	'inits': JSON.parse(jsonCode).inits,
-	'classes': JSON.parse(jsonCode).classes
-};
+const inits = userCode.inits,
+	classes = userCode.classes;
 
-function addElement(name, classes, place) { 
-	var a = $('<div>', {class: 'element ' + classes, css: place }).appendTo('#board').text(name);
-	a.draggable();
-	return a;
+function addElement(elements, place) {
+	for (let i = 0; i < elements.length; i++) {
+		let element = $('<div>', {class: 'element ui-draggable ' + classes[elements[i]]});
+
+		element.text(elements[i]);
+		element.draggable();
+		element.appendTo('#board');
+		element.css(place);
+		element.bind('mousedown', function() {
+			element.topZIndex();
+		});
+	}
 }
 
-for (var i = 0; i < data.inits.length; i++) {
-	addElement(data.inits[i], data.classes[data.inits[i]], {left: '200px', top: '200px'});
-}
+addElement(inits, {position: 'absolute', left: '500px', top: '500px'});
