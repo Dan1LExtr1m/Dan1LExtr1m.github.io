@@ -7,14 +7,27 @@ html, body, #board {
 	height: 100%;
 }
 
+.main {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	width: 100px;
+	height: 100px;
+
+	background-color: rgba(100, 200, 255, 0.1);
+}
+
 .element {
 	border: 1px none grey;
 	border-radius: 10px;
 	cursor: pointer;
 	display: inline-block;
 	min-width: 50px;
+	opacity: 0;
 	padding: 5px;
-	position: absolute;
+	position: absolute !important;
 	text-align: center;
 	font-family: 'Roboto', sans-serif;
 	font-weight: bold;
@@ -29,9 +42,18 @@ html, body, #board {
 
 .water {
 	background-color: rgba(0, 200, 230, 0.3);
-	color:#009696;
+	color: #009696;
 }
 
 .ui-draggable-dragging {
 	z-index: 2;
+}
+
+.ui-selecting { 
+	border: 2px solid !important; 
+}
+
+.ui-selectable-helper { 
+	border: 1px dotted black !important; 
+	background-color: rgba(100, 200, 255, 0.1);
 }
