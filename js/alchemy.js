@@ -101,7 +101,6 @@ function react(reagents, place) {
 	let r = reagents.sort().join('+'),
 		result = reactions[r];
 
-	console.log(r)
 	return result;
 }
 
