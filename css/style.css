@@ -45,6 +45,16 @@ html, body, #board {
 	color: #009696;
 }
 
+.earth {
+	background-color: rgba(160, 82, 45, 0.3);
+	color: sienna;
+}
+
+.air {
+	background-color: rgba(204, 238, 256, 0.5);
+	color:#AAAAAA;
+}
+
 .ui-draggable-dragging {
 	z-index: 2;
 }
