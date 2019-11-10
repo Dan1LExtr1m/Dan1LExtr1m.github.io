@@ -71,6 +71,7 @@
       let button = document.getElementById('click-button');
       
       let toWood = 10;
+      let openedStone;
       
       function click() {
         clicks++;
@@ -85,8 +86,10 @@
         }
         
         if (wood >= 3 && stone <= 0) {
+          openedStone = true;
+          
           shop.innerHTML = '<h3>Shop</h3>';
-          shop.innerHTML += '<div id="buy-stone">Buy 1x stone for 1x wood</div>';
+          if (openedStone) shop.innerHTML += '<div id="buy-stone" style="cursor: pointer;">Buy 1x stone for 1x wood</div>';
           
           document.getElementById('buy-stone').addEventListener('click', buyStone);
         }
