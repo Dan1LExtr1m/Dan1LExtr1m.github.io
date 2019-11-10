@@ -11,7 +11,17 @@
       
       #resources {
         position: absolute;
-        left: 70%;
+        left: 65%;
+        top: 35%;
+        transform: translate(-50%, -50%);
+        
+        color: gray;
+        user-select: none;
+      }
+      
+      #shop {
+        position: absolute;
+        left: 35%;
         top: 35%;
         transform: translate(-50%, -50%);
         
@@ -46,15 +56,17 @@
   </head>
   <body>
     <div id="resources"></div>
-    
+    <div id="shop"></div>
     <div id="text">You clicked 0 times</div>
     <div id="click-button">Click</div>
     
     <script>
       let clicks = 0;
       let wood = 0;
+      let stone = 0;
       
       let resources = document.getElementById('resources');
+      let shop = document.getElementById('shop');
       let text = document.getElementById('text');
       let button = document.getElementById('click-button');
       
@@ -69,8 +81,28 @@
         if (toWood <= 0) {
           toWood = 10;
           wood++;
-          resources.innerHTML = `${wood} of wood`;
+          updateResources();
         }
+        
+        if (wood >= 3 && stone <= 0) {
+          shop.innerHTML = '<h3>Shop</h3>';
+          shop.innerHTML += '<div id="buy-stone">Buy 1x stone for 1x wood</div>';
+          
+          document.getElementById('buy-stone').addEventListener('click', buyStone);
+        }
+      }
+      
+      function updateResources() {
+        resources.innerHTML = `${wood} of wood`;
+        resources.innerHTML += `<br> ${stone} of stone`;
+      }
+      
+      function buyStone() {
+        if (wood < 1) return;
+        
+        stone++;
+        wood--;
+        updateResources();
       }
       
       button.addEventListener('click', click);
