@@ -9,6 +9,16 @@
         margin: 0;
       }
       
+      #resources {
+        position: absolute;
+        left: 55%;
+        top: 45%;
+        transform: translate(-50%, -50%);
+        
+        color: gray;
+        user-select: none;
+      }
+      
       #text {
         position: absolute;
         left: 50%;
@@ -35,18 +45,32 @@
     </style>
   </head>
   <body>
+    <div id="resources"></div>
+    
     <div id="text">You clicked 0 times</div>
     <div id="click-button">Click</div>
     
     <script>
       let clicks = 0;
+      let wood = 0;
       
+      let resources = document.getElementById('resources');
       let text = document.getElementById('text');
       let button = document.getElementById('click-button');
+      
+      let toWood = 10;
       
       function click() {
         clicks++;
         text.innerHTML = `You clicked ${clicks} times`;
+        
+        toWood--;
+        
+        if (toWood <= 0) {
+          toWood = 10;
+          wood++;
+          resources.innerHTML = `${wood} of wood`;
+        }
       }
       
       button.addEventListener('click', click);
