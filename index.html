@@ -15,7 +15,7 @@
         top: 45%;
         transform: translate(-50%, -50%);
 
-        font-size: 16px;
+        font-size: 18px;
         color: gray;
       }
       
@@ -25,15 +25,15 @@
         top: 50%;
         transform: translate(-50%, -50%);
         
-        border-radius: 10px;
         border: 0;
         padding: 10px;
         color: gray;
+        cursor: pointer;
       }
     </style>
   </head>
   <body>
-    <div id="text">You clicked 0 times.</div>
+    <div id="text">You clicked 0 times</div>
     <div id="click-button">Click</div>
     
     <script>
@@ -44,10 +44,10 @@
       
       function click() {
         clicks++;
-        text.innerHTML = `You clicked ${clicks} times.`;
+        text.innerHTML = `You clicked ${clicks} times`;
       }
       
-      button.addEventListener('onclick', click);
+      button.addEventListener('click', click);
     </script>
   </body>
 </html>
