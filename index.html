@@ -26,7 +26,7 @@
         transform: translate(-50%, -50%);
         
         border-radius: 10px;
-        border: 2px solid gray;
+        border: 0;
         padding: 5px;
         color: gray;
       }
@@ -34,17 +34,20 @@
   </head>
   <body>
     <div id="text">You clicked 0 times.</div>
-    <button id="click-button" onclick="click(1)">Click</button>
+    <button id="click-button">Click</button>
     
     <script>
       let clicks = 0;
       
-      function click(n) {
-        let text = document.getElementById('text');
-        
-        clicks += n;
+      let text = document.getElementById('text');
+      let button = document.getElementById('click-button');
+      
+      function click() {
+        clicks++;
         text.innerHTML = `You clicked ${clicks} times.`;
       }
+      
+      button.addEventListener('onclick', click);
     </script>
   </body>
 </html>
