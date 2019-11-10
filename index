@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Click</title>
+    <style>
+      html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+      }
+      
+      #text {
+        position: absolute;
+        left: 50%;
+        top: 45%;
+        transform: translate(-50%, -50%);
+
+        font-size: 16px;
+        color: gray;
+      }
+      
+      #click-button {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        
+        border-radius: 10px;
+        border: 2px solid gray;
+        padding: 5px;
+        color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="text">You clicked 0 times.</div>
+    <button id="click-button" onclick="click(1)">Click</button>
+    
+    <script>
+      let clicks = 0;
+      
+      function click(n) {
+        let text = document.getElementById('text');
+        
+        clicks += n;
+        text.innerHTML = `You clicked ${clicks} times.`;
+      }
+    </script>
+  </body>
+</html>
